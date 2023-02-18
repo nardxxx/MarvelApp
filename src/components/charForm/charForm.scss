@@ -1,0 +1,96 @@
+.formik {
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 25%);
+    padding: 25px;
+    position: relative;
+    z-index: 5;
+    & .message {
+        padding-top: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        & .error {
+            align-self: center;
+
+            font-family: "Roboto Condensed";
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 21px;
+
+            color: #9f0013;
+        }
+        & .success {
+            font-family: "Roboto Condensed";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 21px;
+
+            color: #03710e;
+        }
+    }
+}
+.char-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+        "title title"
+        "input btn"
+        "error btnGray";
+    &__title {
+        font-family: "Roboto Condensed";
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21px;
+
+        margin-bottom: 15px;
+        color: #000000;
+        grid-area: title;
+    }
+    &__input {
+        width: 250px;
+        height: 38px;
+        background: #ffffff;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border: 0;
+        margin-right: 24px;
+        padding: 10px;
+        grid-area: input;
+    }
+    &__btn {
+        width: 101px;
+        height: 38px;
+        border: 0;
+        outline: 0;
+        background: #9f0013;
+
+        font-family: "Roboto Condensed";
+        font-weight: 400;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        text-transform: uppercase;
+        color: #ffffff;
+        grid-area: btn;
+        &-gray {
+            grid-area: btnGray;
+            background: #5c5c5c;
+            &.disabled {
+                display: none;
+            }
+        }
+    }
+
+    & .error {
+        align-self: center;
+        margin-top: 15px;
+        font-family: "Roboto Condensed";
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21px;
+
+        color: #9f0013;
+    }
+}
