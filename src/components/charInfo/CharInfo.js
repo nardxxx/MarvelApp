@@ -58,7 +58,6 @@ function CharInfo(props) {
 const View = ({ char }) => {
     const { name, description, thumbnail, homepage, wiki, comics, styles } = char;
 
-
     const limitedComicsList = [];
 
     for (let i = 0; i < comics.length; i++) {

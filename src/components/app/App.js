@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
+import './App.css'
 
 
 import AppHeader from "../appHeader/AppHeader";

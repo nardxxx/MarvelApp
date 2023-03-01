@@ -19,3 +19,23 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .app {
+        &__banner {
+            padding: 10px 0;
+            display: block;
+            height: auto;
+            & img {
+                display: none;
+            }
+            &-text {
+                font-size: 18px;
+                text-align: center;
+                line-height: 20px;
+                color: #ffffff;
+                padding-left: 0px;
+            }
+        }
+    }
+}

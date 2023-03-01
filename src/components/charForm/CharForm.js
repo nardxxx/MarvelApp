@@ -36,13 +36,7 @@ const CharForm = ({ props }) => {
             {char ?
                 <>
                     <div className='success'>There is! Visit {char.name} page?</div>
-                    <Link
-                        to={char.name}
-                        onFocus={e => e.target.parentElement.classList.add('active')}
-                        onBlur={e => e.target.parentElement.classList.remove('active')}
-                        className={`char-form__btn char-form__btn-gray`} >
-                        Go To
-                    </Link>
+
                 </> : null}
             {error ? <div className='error'>Something went wrong</div> : null}
         </div>
@@ -76,11 +70,21 @@ const CharForm = ({ props }) => {
                         className="char-form__input"
                         name="search" type="input"
                         onInput={() => clearData()} />
-                    <button
-                        className="char-form__btn"
-                        type="submit"
-                        style={{ backgroundColor: loading ? '#61121b' : '' }}
-                        disabled={loading}>{loading ? <Spinner height='70%' /> : 'Find'}</button>
+                    <div className='char-form__btns'>
+                        <button
+                            className="char-form__btn"
+                            type="submit"
+                            style={{ backgroundColor: loading ? '#61121b' : '' }}
+                            disabled={loading}>{loading ? <Spinner height='70%' /> : 'Find'}</button>
+                        {char ? <Link
+                            to={char.name}
+                            onFocus={e => e.target.parentElement.classList.add('active')}
+                            onBlur={e => e.target.parentElement.classList.remove('active')}
+                            className={`char-form__btn char-form__btn-gray`} >
+                            Go To
+                        </Link> : ''}
+                    </div>
+
                     <FormikErrorMessage name="search"
                         component="div"
                         className='error'

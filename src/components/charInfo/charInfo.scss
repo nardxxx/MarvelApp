@@ -64,3 +64,12 @@
         text-align: center;
     }
 }
+
+@media(max-width:1200px) {
+    .char {
+        &__info {
+            display: none;
+        }
+        
+    }
+}

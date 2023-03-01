@@ -34,9 +34,9 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
-        "title title"
-        "input btn"
-        "error btnGray";
+        "title btns"
+        "input btns"
+        "error error";
     &__title {
         font-family: "Roboto Condensed";
         font-weight: 700;
@@ -56,6 +56,9 @@
         margin-right: 24px;
         padding: 10px;
         grid-area: input;
+    }
+    &__btns {
+        grid-area: btns;
     }
     &__btn {
         width: 101px;
@@ -77,6 +80,7 @@
         &-gray {
             grid-area: btnGray;
             background: #5c5c5c;
+            margin-top: 5px;
             &.disabled {
                 display: none;
             }
@@ -90,7 +94,65 @@
         font-weight: 700;
         font-size: 18px;
         line-height: 21px;
-
+        grid-area: error;
         color: #9f0013;
+    }
+}
+
+@media (max-width: 1200px) {
+    .formik {
+        & .message {
+            max-width: 381px;
+            margin: 0 auto;
+        }
+    }
+    .char-form {
+        max-width: 381px;
+        margin-left: auto;
+        margin-right: auto;
+        grid-template-columns: 0.5fr 0.5fr;
+        grid-template-rows: none;
+        &__btns {
+            display: flex;
+            justify-content: flex-end;
+        }
+        &__btn {
+            margin-right: 10px;
+            &-gray {
+                margin-top: 0px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .char-form {
+        grid-template-columns: 0.5fr 0.5fr;
+        grid-template-rows: none;
+        grid-template-areas:
+            "title btns"
+            "input btns "
+            "error error";
+        &__btns {
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
+        &__btn {
+            margin-right: 0px;
+            &-gray {
+                margin-top: 10px;
+            }
+        }
+        &__input {
+            width: 100%;
+            height: 38px;
+            margin-bottom: 0px;
+            background: #ffffff;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border: 0;
+            margin-right: 0px;
+            padding: 10px;
+        }
     }
 }

@@ -1,9 +1,10 @@
-@import '../../style/variables.scss';
+@import "../../style/variables.scss";
 
 .app {
     &__header {
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
     &__title {
         font-weight: bold;
@@ -24,6 +25,43 @@
                 margin: 0 8px;
                 a:hover {
                     color: $main-color;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .app {
+        &__header {
+            padding: 30px 0 30px 0;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .app {
+        &__header {
+            display: block;
+            padding: 0 10px;
+            margin-bottom: 20px;
+        }
+        &__title {
+            margin-bottom: 10px;
+        }
+        &__menu {
+            ul {
+                justify-content: flex-start;
+                font-weight: bold;
+                font-size: 24px;
+                line-height: 15px;
+
+                li {
+                    &:first-child {
+                        margin: 0 10px 0 0;
+                    }
+                    a:hover {
+                        color: $main-color;
+                    }
                 }
             }
         }
